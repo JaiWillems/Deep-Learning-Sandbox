@@ -4,10 +4,10 @@ from src.data_utils.DataSet import DataSet
 from src.data_utils.ModelData import ModelData
 
 
-class NonSequentialModelData(ModelData):
-    """Container for non-sequential training and testing data.
+class UnorderedModelData(ModelData):
+    """Container for unordered training and testing data.
 
-    This class is specific to non-sequential data as it randomly shuffles the
+    This class is specific to unordered data as it randomly shuffles the
     training data when preparing the training sets.
 
     Parameters
@@ -19,7 +19,7 @@ class NonSequentialModelData(ModelData):
     """
 
     def __init__(self, training_set: DataSet, testing_set: DataSet) -> None:
-        super(NonSequentialModelData, self).__init__(training_set, testing_set)
+        super(UnorderedModelData, self).__init__(training_set, testing_set)
 
     def __getattribute__(self, attr):
         method = object.__getattribute__(self, attr)
